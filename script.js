@@ -78,6 +78,7 @@ function adicionarJogador() {
   jogadores.push(novoJogador)
   novoJogador.pontos = calcularPontos(novoJogador)
   exibirNaTela(jogadores)
+  document.getElementById('adicionar').value = ''
 }
 
 function excluirJogador(i) {
