@@ -10,10 +10,6 @@ var jogador1 = new Jogador('João', 0, 0, 0, 0)
 var jogador2 = new Jogador('Lucas', 0, 0, 0, 0)
 var jogador3 = new Jogador('Clara', 0, 0, 0, 0)
 
-jogador1.pontos = calcularPontos(jogador1)
-jogador2.pontos = calcularPontos(jogador2)
-jogador3.pontos = calcularPontos(jogador3)
-
 function calcularPontos(jogador) {
   var pontos = jogador.vitorias * 3 + jogador.empates
   return pontos
@@ -35,6 +31,8 @@ function exibirNaTela(jogadores) {
       "<td><button onClick='adicionarEmpate(" + i + ")'>Empate</button></td>"
     elemento +=
       "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
+    elemento +=
+      "<td><button onClick='excluirJogador(" + i + ")'>❌</button></td>"
     elemento += '</tr>'
   }
   var tabelaJogadores = document.getElementById('tabelaJogadores')
@@ -80,5 +78,17 @@ function adicionarJogador() {
   jogadores.push(novoJogador)
   novoJogador.pontos = calcularPontos(novoJogador)
   exibirNaTela(jogadores)
-  console.log(jogadores)
+}
+
+function excluirJogador(i) {
+  var jogador = jogadores[i]
+  for (let i = 0; i < jogadores.length; i++) {
+    if (jogadores[i] == jogador) {
+      var indice = jogadores.indexOf(jogador)
+      if (indice > -1) {
+        jogadores.splice(indice, 1)
+      }
+    }
+  }
+  exibirNaTela(jogadores)
 }
