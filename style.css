@@ -63,3 +63,27 @@ button:hover {
   font-size: 17px;
   font-weight: bold;
 }
+
+.outros {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#adicionar {
+  width: 200px;
+  padding: 5px;
+  background-color: rgb(211, 210, 210);
+}
+
+.button-clean {
+  position: relative;
+}
+
+#button-clean {
+  position: absolute;
+  top: -10px;
+  left: 240px;
+  background-color: rgb(37, 37, 37);
+}
