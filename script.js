@@ -63,3 +63,13 @@ function adicionarDerrota(i) {
   jogador.pontos = calcularPontos(jogador)
   exibirNaTela(jogadores)
 }
+
+function limparTabela() {
+  for (let i = 0; i < jogadores.length; i++) {
+    jogadores[i].vitorias = 0
+    jogadores[i].empates = 0
+    jogadores[i].derrotas = 0
+    jogadores[i].pontos = 0
+  }
+  exibirNaTela(jogadores)
+}
