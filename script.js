@@ -6,9 +6,9 @@ function Jogador(nome, vitorias, empates, derrotas, pontos) {
     (this.pontos = pontos)
 }
 
-var jogador1 = new Jogador('João', 3, 2, 1, 0)
-var jogador2 = new Jogador('Lucas', 1, 3, 2, 0)
-var jogador3 = new Jogador('Clara', 0, 3, 0, 0)
+var jogador1 = new Jogador('João', 0, 0, 0, 0)
+var jogador2 = new Jogador('Lucas', 0, 0, 0, 0)
+var jogador3 = new Jogador('Clara', 0, 0, 0, 0)
 
 jogador1.pontos = calcularPontos(jogador1)
 jogador2.pontos = calcularPontos(jogador2)
@@ -72,4 +72,13 @@ function limparTabela() {
     jogadores[i].pontos = 0
   }
   exibirNaTela(jogadores)
+}
+
+function adicionarJogador() {
+  var adicionar = document.getElementById('adicionar').value
+  var novoJogador = new Jogador(adicionar, 0, 0, 0, 0)
+  jogadores.push(novoJogador)
+  novoJogador.pontos = calcularPontos(novoJogador)
+  exibirNaTela(jogadores)
+  console.log(jogadores)
 }
