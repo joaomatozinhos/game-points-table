@@ -24,7 +24,7 @@ var jogadores = [jogador1, jogador2, jogador3]
 function exibirNaTela(jogadores) {
   var elemento = ''
   for (let i = 0; i < jogadores.length; i++) {
-    elemento += '<tr><td>' + jogadores[i].nome + '</td>'
+    elemento += '<tr><td class="nome">' + jogadores[i].nome + '</td>'
     elemento += '<td>' + jogadores[i].vitorias + '</td>'
     elemento += '<td>' + jogadores[i].empates + '</td>'
     elemento += '<td>' + jogadores[i].derrotas + '</td>'
